@@ -196,5 +196,18 @@ namespace ProductReviewManagement
             }
             return count;
         }
+        /// <summary>
+        ///UC-10 Finding the average rating value
+        /// </summary>
+        /// <param name="table"></param>
+        /// <returns></returns>
+        public static double AverageOfRating()
+        {
+            List<ProductReview> products = new List<ProductReview>();
+            DataTable table1 = CreateDataTable(products);
+            double result = (double)table1.Select().Where(p => p["rating"] != DBNull.Value).Select(c => Convert.ToDecimal(c["rating"])).Average();
+            Console.WriteLine(result);
+            return result;
+        }
     }
 }
