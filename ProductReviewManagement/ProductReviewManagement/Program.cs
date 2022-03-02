@@ -40,6 +40,10 @@ namespace ProductReviewManagement
                 case 7:
                     ProductReviewManager.RetrieveOnlyProductIdAndReviews(productReviews);
                     break;
+                case 8:
+                    ProductReviewManager.AddingProductReview(productReviews);
+                    ProductReviewManager.CreateDataTable(productReviews);
+                    break;
 
 
             }
