@@ -44,8 +44,9 @@ namespace ProductReviewManagement
                     ProductReviewManager.AddingProductReview(productReviews);
                     ProductReviewManager.CreateDataTable(productReviews);
                     break;
-
-
+                case 9:
+                    ProductReviewManager.CreateDataTable(productReviews);
+                    break;
             }
         }
     }

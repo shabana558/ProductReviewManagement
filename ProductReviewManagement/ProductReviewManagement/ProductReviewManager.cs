@@ -178,5 +178,23 @@ namespace ProductReviewManagement
                 Console.WriteLine("{0} | {1} | {2} | {3} | {4} ", p["productId"], p["userId"], p["rating"], p["review"], p["isLike"]);
             }
         }
+        /// <summary>
+        /// UC9-->ReturnsOnlyIsLikeFieldAsTrue
+        /// </summary>
+        /// <param name="products"></param>
+        public static int ReturnsOnlyIsLikeFieldAsTrue(DataTable table)
+        {
+            //List<ProductReview> products = new List<ProductReview>();
+            //AddingProductReview(products);
+            //CreateDataTable(products);
+            int count = 0;
+            var res = from t in table.AsEnumerable() where t.Field<bool>("isLike") == true select t;
+            foreach (var p in res)
+            {
+                Console.WriteLine("{0} | {1} | {2} | {3} | {4} ", p["productId"], p["userId"], p["rating"], p["review"], p["isLike"]);
+                count++;
+            }
+            return count;
+        }
     }
 }
